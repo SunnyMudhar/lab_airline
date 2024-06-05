@@ -1,7 +1,13 @@
 package com.example.airline_api.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
 public class Booking {
 
+    @Entity
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private Flight flight;
     private Passenger passenger;

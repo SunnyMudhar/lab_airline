@@ -11,6 +11,8 @@ import java.util.List;
 @RequestMapping("/flights")
 public class FlightController {
 
+
+
     // TODO: Display all available flights
     @GetMapping
     public ResponseEntity<List<Flight>> getAllFlights(){
