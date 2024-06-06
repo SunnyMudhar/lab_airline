@@ -1,4 +1,7 @@
 package com.example.airline_api.repositories;
 
-public interface BookingRepository {
+import com.example.airline_api.models.Booking;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookingRepository extends JpaRepository<Booking, Long> {
 }
