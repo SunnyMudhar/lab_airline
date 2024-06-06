@@ -21,10 +21,10 @@ public class BookingController {
         return new ResponseEntity<>(bookingService.getAllBookings(), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/{id}")
+    @PostMapping
     public ResponseEntity<Booking> addNewBooking(@RequestBody BookingDTO bookingDTO){
         Booking booking = bookingService.createBooking(bookingDTO);
-        return new ResponseEntity<>(bookingService.findSingleBooking(booking.getId()).get(), HttpStatus.CREATED);
+        return new ResponseEntity<>(booking, HttpStatus.CREATED);
     }
 
     // TODO: Extension - Update passenger meal preference

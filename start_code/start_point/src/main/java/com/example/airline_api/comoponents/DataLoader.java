@@ -11,8 +11,6 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import java.awt.print.Book;
-
 @Component
 public class DataLoader implements ApplicationRunner {
 
@@ -25,6 +23,11 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     PassengerService passengerService;
 
+    public DataLoader(){
+
+    }
+
+    @Override
     public void run(ApplicationArguments args) throws Exception {
         Flight bhxToAms = new Flight("Amsterdam", 100, "07/06/2024", "18:00");
         flightService.saveFlight(bhxToAms);
@@ -40,11 +43,12 @@ public class DataLoader implements ApplicationRunner {
         Passenger reece = new Passenger("Reece", "reece@reece.com");
         passengerService.savePassenger(reece);
         Passenger adam = new Passenger("Adam", "adam@adam.com");
+        passengerService.savePassenger(adam);
         Booking booking2 = new Booking(manToKef, joe, 1);
         bookingRepository.save(booking2);
         Booking booking3 = new Booking(manToKef, reece, 23);
         bookingRepository.save(booking3);
-        Booking booking4 = new Booking(manToKef, adam, 48);
+        Booking booking4 = new Booking(manToKef, adam, 3);
         bookingRepository.save(booking4);
     }
 }

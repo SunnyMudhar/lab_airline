@@ -36,8 +36,8 @@ public class BookingService {
     }
 
     public Booking createBooking(BookingDTO bookingDTO) {
-        Passenger passenger = passengerService.findSinglePassenger(bookingDTO.getPassenger().getId()).get();
-        Flight flight = flightService.findSingleFlight(bookingDTO.getFlight().getId()).get();
+        Passenger passenger = passengerService.findSinglePassenger(bookingDTO.getPassengerId()).get();
+        Flight flight = flightService.findSingleFlight(bookingDTO.getFlightId()).get();
         Booking booking = new Booking(
                 flight,
                 passenger,

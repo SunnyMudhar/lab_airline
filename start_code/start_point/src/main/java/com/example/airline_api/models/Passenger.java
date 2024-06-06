@@ -18,7 +18,7 @@ public class Passenger {
     @Column(name = "email")
     private String email;
     @OneToMany(mappedBy = "passenger")
-    @JsonIgnoreProperties({"passengers"})
+    @JsonIgnoreProperties({"passenger"})
     private List<Booking> bookings;
 
     public Passenger(String name, String email) {
